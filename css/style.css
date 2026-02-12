@@ -1,7 +1,6 @@
-/* import google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Times+New+Roman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* css reset (can be added to reset.css) */
+/* css reset */
 * {
     margin: 0;
     padding: 0;
@@ -9,49 +8,74 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif, Arial, sans-serif; /* primary and fallback fonts */
-    background-color: #003366; /* dark blue background */
-    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #003366;
     padding: 20px;
     line-height: 1.5;
     color: #000;
 }
 
 #page-wrapper {
-    max-width: 100%; /* use 100% width for responsiveness */
+    max-width: 100%;
     margin: 0 auto;
-    background-color: #f0f0f0; /* light grey background */
+    background-color: #f0f0f0;
     border: 10px solid #ccc;
     border-radius: 10px;
     padding: 20px;
-    width: 80%; /* responsive width */
+    width: 80%;
 }
 
 header, footer {
-    text-align: center; /* center align the header and footer */
+    text-align: center;
     margin-bottom: 20px;
     color: white;
 }
 
-/* specific change to top heading number and email (assuming it's in a header) */
+header h1 {
+    font-size: 2.6em;
+    color: #003366;
+    margin: 0;
+}
+
 header h2, header p {
-    color: #003366; /* change to dark blue for number and email */
+    color: #003366;
 }
 
 h2 {
-    font-size: 2.5em; /* use relative size */
-    color: #003366; /* dark blue headers */
+    font-size: 2.5em;
+    color: #003366;
     margin: 0;
 }
 
 h3 {
-    font-size: 1.6em; /* slightly smaller heading */
-    color: #003366; /* dark blue headers */
+    font-size: 1.6em;
+    color: #003366;
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-/* centered horizontal navigation */
+p {
+    margin-bottom: 8px;
+}
+
+a {
+    color: #003366;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* image requirement styling */
+img {
+    max-width: 180px;
+    margin: 15px auto;
+    border-radius: 8px;
+}
+
+/* navigation */
 nav#main-nav {
     text-align: center;
     background-color: #003366;
@@ -60,10 +84,9 @@ nav#main-nav {
 
 nav#main-nav ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center; /* center the nav links */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav#main-nav ul li {
@@ -77,7 +100,7 @@ nav#main-nav ul li a {
     text-decoration: none;
     text-align: center;
     color: white;
-    padding: 0.5em 1.2em; /* use relative units */
+    padding: 0.5em 1.2em;
 }
 
 nav#main-nav ul li a:hover {
@@ -86,6 +109,7 @@ nav#main-nav ul li a:hover {
     border-radius: 40px;
 }
 
+/* layout */
 #content-wrapper {
     display: flex;
     flex-direction: row;
@@ -94,7 +118,7 @@ nav#main-nav ul li a:hover {
 
 #main-content {
     flex: 1;
-    margin-right: 2%; /* adjusted margin */
+    margin-right: 2%;
     padding: 10px;
 }
 
@@ -112,10 +136,20 @@ ul {
     padding-left: 30px;
 }
 
+li {
+    margin-bottom: 6px;
+}
+
 #clubs-skills {
-    width: 100%; /* make this responsive */
+    width: 100%;
     margin-top: 2em;
     float: left;
+    display: flex;
+    gap: 20px;
+}
+
+#float1, #float2 {
+    flex: 1;
 }
 
 #clubs-skills h3 {
@@ -128,9 +162,34 @@ ul {
 }
 
 #clearfix {
-    clear: both; /* clear floats */
+    clear: both;
 }
 
+/* responsive */
+@media (max-width: 768px) {
 
+    #page-wrapper {
+        width: 95%;
+        padding: 12px;
+    }
+
+    #content-wrapper {
+        flex-direction: column;
+    }
+
+    #main-content {
+        margin-right: 0;
+    }
+
+    #clubs-skills {
+        flex-direction: column;
+    }
+
+    nav#main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
 
 
